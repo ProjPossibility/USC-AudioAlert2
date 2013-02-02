@@ -16,7 +16,6 @@
     IBOutlet UILabel *recStateLabel;
     
     BOOL isRecording;
-    BOOL isPlaying;
     
     NSURL *temperoryRecFile;
     AVAudioRecorder *recorder;

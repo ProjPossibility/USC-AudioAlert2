@@ -71,7 +71,7 @@
     }
 }
 - (IBAction)playBack {
-    AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:temperoryRecFile error:nil];
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:temperoryRecFile error:nil];
     
     player.volume = 1;
     
