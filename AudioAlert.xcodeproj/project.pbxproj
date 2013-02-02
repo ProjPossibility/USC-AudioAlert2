@@ -18,6 +18,7 @@
 		093F4EDF16BDA15E001D6771 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 093F4EDE16BDA15E001D6771 /* Default-568h@2x.png */; };
 		093F4EE216BDA15E001D6771 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 093F4EE016BDA15E001D6771 /* MainStoryboard.storyboard */; };
 		093F4EE516BDA15E001D6771 /* AudioAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093F4EE416BDA15E001D6771 /* AudioAlertViewController.m */; };
+		093F4EEC16BDBBA9001D6771 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093F4EEB16BDBBA9001D6771 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		093F4EE116BDA15E001D6771 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		093F4EE316BDA15E001D6771 /* AudioAlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioAlertViewController.h; sourceTree = "<group>"; };
 		093F4EE416BDA15E001D6771 /* AudioAlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioAlertViewController.m; sourceTree = "<group>"; };
+		093F4EEB16BDBBA9001D6771 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				093F4EEC16BDBBA9001D6771 /* AVFoundation.framework in Frameworks */,
 				093F4EC916BDA15E001D6771 /* UIKit.framework in Frameworks */,
 				093F4ECB16BDA15E001D6771 /* Foundation.framework in Frameworks */,
 				093F4ECD16BDA15E001D6771 /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +59,7 @@
 		093F4EBC16BDA15E001D6771 = {
 			isa = PBXGroup;
 			children = (
+				093F4EEB16BDBBA9001D6771 /* AVFoundation.framework */,
 				093F4ECE16BDA15E001D6771 /* AudioAlert */,
 				093F4EC716BDA15E001D6771 /* Frameworks */,
 				093F4EC616BDA15E001D6771 /* Products */,
