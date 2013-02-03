@@ -125,12 +125,16 @@
 //    
 //    [alertBox show];
     
-    perror(<#const char *#>)
+    
     redAlertView.hidden = NO;
     
+    [self performSelector:@selector(redAlertTrigger) withObject:nil afterDelay:1];
     
 }
 
+- (IBAction)redAlertTrigger {
+    redAlertView.hidden = YES;
+}
 
 - (IBAction)toggleListening:(id)sender {
     if (isListening) {
