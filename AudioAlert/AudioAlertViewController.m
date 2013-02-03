@@ -10,12 +10,23 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
+#import "RIOInterface.h"
+
 @interface AudioAlertViewController ()
 
 @end
 
 @implementation AudioAlertViewController
-@synthesize recButton, playButton;
+@synthesize recButton, playButton, alertButton;
+
+
+@synthesize currentFrequencyLabel;
+@synthesize listenButton;
+@synthesize key;
+@synthesize prevChar;
+@synthesize isListening;
+@synthesize	rioRef;
+@synthesize currentFrequency;
 
 - (void)viewDidLoad
 {
@@ -30,6 +41,8 @@
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    rioRef = [RIOInterface sharedInstance];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,6 +53,10 @@
     recorder = nil;
     temperoryRecFile = nil;
     playButton.hidden = YES;
+    
+    
+	currentFrequencyLabel = nil;
+    listenButton = nil;
     
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -93,6 +110,41 @@
     alertBox = [[UIAlertView alloc] initWithTitle:@"AlertBox" message:@"Alert Clicked" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     
     [alertBox show];
+}
+
+
+- (IBAction)toggleListening:(id)sender {
+    if (isListening) {
+		[self stopListener];
+		[listenButton setTitle:@"Begin Listening" forState:UIControlStateNormal];
+	} else {
+		[self startListener];
+		[listenButton setTitle:@"Stop Listening" forState:UIControlStateNormal];
+	}
+	
+	isListening = !isListening;
+}
+- (void)startListener {
+    [rioRef startListening:self];
+}
+- (void)stopListener {
+    [rioRef stopListening];
+}
+
+- (void)frequencyChangedWithValue:(float)newFrequency {
+//    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+	self.currentFrequency = newFrequency;
+	[self performSelectorInBackground:@selector(updateFrequencyLabel) withObject:nil];
+    
+//    [pool drain];
+//	pool = nil;
+}
+- (void)updateFrequencyLabel {
+//    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+	self.currentFrequencyLabel.text = [NSString stringWithFormat:@"%f", self.currentFrequency];
+	[self.currentFrequencyLabel setNeedsDisplay];
+//	[pool drain];
+//	pool = nil;
 }
 
 @end

@@ -21,6 +21,9 @@
 		093F4EEC16BDBBA9001D6771 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093F4EEB16BDBBA9001D6771 /* AVFoundation.framework */; };
 		093F4EEE16BDE1FF001D6771 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093F4EED16BDE1FF001D6771 /* AudioToolbox.framework */; };
 		09F30A4616BE23B200647C10 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F30A4516BE23B200647C10 /* Accelerate.framework */; };
+		09F30A5C16BE806600647C10 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F30A5B16BE806600647C10 /* CoreFoundation.framework */; };
+		09F30A5E16BE807200647C10 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F30A5D16BE807200647C10 /* CoreAudio.framework */; };
+		09F30A6116BE87A700647C10 /* RIOInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F30A6016BE87A700647C10 /* RIOInterface.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,10 @@
 		093F4EEB16BDBBA9001D6771 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		093F4EED16BDE1FF001D6771 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		09F30A4516BE23B200647C10 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		09F30A5B16BE806600647C10 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		09F30A5D16BE807200647C10 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		09F30A5F16BE87A700647C10 /* RIOInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RIOInterface.h; path = AudioAlert/RIOInterface.h; sourceTree = "<group>"; };
+		09F30A6016BE87A700647C10 /* RIOInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RIOInterface.m; path = AudioAlert/RIOInterface.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09F30A5E16BE807200647C10 /* CoreAudio.framework in Frameworks */,
+				09F30A5C16BE806600647C10 /* CoreFoundation.framework in Frameworks */,
 				09F30A4616BE23B200647C10 /* Accelerate.framework in Frameworks */,
 				093F4EEE16BDE1FF001D6771 /* AudioToolbox.framework in Frameworks */,
 				093F4EEC16BDBBA9001D6771 /* AVFoundation.framework in Frameworks */,
@@ -65,9 +74,8 @@
 		093F4EBC16BDA15E001D6771 = {
 			isa = PBXGroup;
 			children = (
-				09F30A4516BE23B200647C10 /* Accelerate.framework */,
-				093F4EED16BDE1FF001D6771 /* AudioToolbox.framework */,
-				093F4EEB16BDBBA9001D6771 /* AVFoundation.framework */,
+				09F30A5F16BE87A700647C10 /* RIOInterface.h */,
+				09F30A6016BE87A700647C10 /* RIOInterface.m */,
 				093F4ECE16BDA15E001D6771 /* AudioAlert */,
 				093F4EC716BDA15E001D6771 /* Frameworks */,
 				093F4EC616BDA15E001D6771 /* Products */,
@@ -85,6 +93,11 @@
 		093F4EC716BDA15E001D6771 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09F30A5D16BE807200647C10 /* CoreAudio.framework */,
+				09F30A5B16BE806600647C10 /* CoreFoundation.framework */,
+				09F30A4516BE23B200647C10 /* Accelerate.framework */,
+				093F4EED16BDE1FF001D6771 /* AudioToolbox.framework */,
+				093F4EEB16BDBBA9001D6771 /* AVFoundation.framework */,
 				093F4EC816BDA15E001D6771 /* UIKit.framework */,
 				093F4ECA16BDA15E001D6771 /* Foundation.framework */,
 				093F4ECC16BDA15E001D6771 /* CoreGraphics.framework */,
@@ -189,6 +202,7 @@
 				093F4ED516BDA15E001D6771 /* main.m in Sources */,
 				093F4ED916BDA15E001D6771 /* AudioAlertAppDelegate.m in Sources */,
 				093F4EE516BDA15E001D6771 /* AudioAlertViewController.m in Sources */,
+				09F30A6116BE87A700647C10 /* RIOInterface.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

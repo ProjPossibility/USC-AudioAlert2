@@ -8,10 +8,19 @@
 
 #import "AudioAlertAppDelegate.h"
 
+#import "RIOInterface.h"
+
 @implementation AudioAlertAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    /**RIO session setup */
+	RIOInterface *rioRef = [RIOInterface sharedInstance];
+	[rioRef setSampleRate:44100];
+	[rioRef setFrequency:294];
+	[rioRef initializeAudioSession];
+    
+    
     // Override point for customization after application launch.
     return YES;
 }
