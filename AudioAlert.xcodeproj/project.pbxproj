@@ -20,6 +20,7 @@
 		093F4EE516BDA15E001D6771 /* AudioAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093F4EE416BDA15E001D6771 /* AudioAlertViewController.m */; };
 		093F4EEC16BDBBA9001D6771 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093F4EEB16BDBBA9001D6771 /* AVFoundation.framework */; };
 		093F4EEE16BDE1FF001D6771 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093F4EED16BDE1FF001D6771 /* AudioToolbox.framework */; };
+		09F30A4616BE23B200647C10 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F30A4516BE23B200647C10 /* Accelerate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		093F4EE416BDA15E001D6771 /* AudioAlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioAlertViewController.m; sourceTree = "<group>"; };
 		093F4EEB16BDBBA9001D6771 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		093F4EED16BDE1FF001D6771 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		09F30A4516BE23B200647C10 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09F30A4616BE23B200647C10 /* Accelerate.framework in Frameworks */,
 				093F4EEE16BDE1FF001D6771 /* AudioToolbox.framework in Frameworks */,
 				093F4EEC16BDBBA9001D6771 /* AVFoundation.framework in Frameworks */,
 				093F4EC916BDA15E001D6771 /* UIKit.framework in Frameworks */,
@@ -62,6 +65,7 @@
 		093F4EBC16BDA15E001D6771 = {
 			isa = PBXGroup;
 			children = (
+				09F30A4516BE23B200647C10 /* Accelerate.framework */,
 				093F4EED16BDE1FF001D6771 /* AudioToolbox.framework */,
 				093F4EEB16BDBBA9001D6771 /* AVFoundation.framework */,
 				093F4ECE16BDA15E001D6771 /* AudioAlert */,
@@ -307,6 +311,7 @@
 				093F4EEA16BDA15E001D6771 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
