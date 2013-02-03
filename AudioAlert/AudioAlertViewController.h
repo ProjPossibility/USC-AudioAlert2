@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface AudioAlertViewController : UIViewController <AVAudioRecorderDelegate> {
     IBOutlet UIButton *playButton;
@@ -20,12 +21,21 @@
     NSURL *temperoryRecFile;
     AVAudioRecorder *recorder;
     AVAudioPlayer *player;
+    
+    
+    IBOutlet UIButton *alertButton;
+    
+    UIAlertView *alertBox;
 }
 
 @property(nonatomic, retain) IBOutlet UIButton *playButton;
 @property(nonatomic, retain) IBOutlet UIButton *recButton;
 
+@property(nonatomic, retain) IBOutlet UIButton *alertButton;
+
 -(IBAction)recording;
 -(IBAction)playBack;
+
+-(IBAction)alert;
 
 @end

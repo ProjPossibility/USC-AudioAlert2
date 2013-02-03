@@ -53,6 +53,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUr-t2-ofc">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Alert">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="alert" destination="2" eventType="touchUpInside" id="E0k-2u-yeZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -62,13 +75,17 @@
                             <constraint firstItem="HmK-PF-rY3" firstAttribute="baseline" secondItem="L3e-5i-ziX" secondAttribute="baseline" type="default" id="Bw8-Xn-dNy"/>
                             <constraint firstAttribute="bottom" secondItem="HmK-PF-rY3" secondAttribute="bottom" constant="175" id="D1t-eo-Lt9"/>
                             <constraint firstAttribute="trailing" secondItem="HmK-PF-rY3" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="OSk-3d-15D"/>
-                            <constraint firstItem="f8I-QE-FcH" firstAttribute="top" secondItem="3" secondAttribute="top" constant="200" id="OTc-wS-H0T"/>
+                            <constraint firstAttribute="bottom" secondItem="iUr-t2-ofc" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="TDy-uq-UYL"/>
+                            <constraint firstAttribute="trailing" secondItem="iUr-t2-ofc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Ykq-rE-SiK"/>
                             <constraint firstItem="f8I-QE-FcH" firstAttribute="top" secondItem="L3e-5i-ziX" secondAttribute="top" type="default" id="iAT-cX-4cK"/>
                             <constraint firstItem="HmK-PF-rY3" firstAttribute="baseline" secondItem="f8I-QE-FcH" secondAttribute="baseline" type="default" id="kcD-iB-lEa"/>
+                            <constraint firstItem="iUr-t2-ofc" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="pyK-HG-POh"/>
                             <constraint firstAttribute="trailing" secondItem="f8I-QE-FcH" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="uoo-z5-RFp"/>
+                            <constraint firstItem="L3e-5i-ziX" firstAttribute="top" secondItem="3" secondAttribute="top" constant="200" id="xyV-jP-wlN"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="alertButton" destination="iUr-t2-ofc" id="sxJ-so-wHz"/>
                         <outlet property="playButton" destination="f8I-QE-FcH" id="2UF-wQ-glr"/>
                         <outlet property="recButton" destination="L3e-5i-ziX" id="OU6-Nz-o09"/>
                         <outlet property="recStateLabel" destination="HmK-PF-rY3" id="xOH-EY-z0N"/>
@@ -82,8 +99,10 @@
         <class className="AudioAlertViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AudioAlertViewController.h"/>
             <relationships>
+                <relationship kind="action" name="alert"/>
                 <relationship kind="action" name="playBack"/>
                 <relationship kind="action" name="recording"/>
+                <relationship kind="outlet" name="alertButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="recButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="recStateLabel" candidateClass="UILabel"/>

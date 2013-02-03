@@ -8,6 +8,7 @@
 
 #import "AudioAlertViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface AudioAlertViewController ()
 
@@ -19,7 +20,6 @@
 - (void)viewDidLoad
 {
     isRecording = NO;
-    isPlaying = NO;
     playButton.hidden = YES;
     recStateLabel.text = @"Not Recording";
     
@@ -84,6 +84,15 @@
     
     recStateLabel.text = @"Not Recording";
     playButton.enabled = YES;
+}
+
+-(IBAction)alert {
+    
+    AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);
+    
+    alertBox = [[UIAlertView alloc] initWithTitle:@"AlertBox" message:@"Alert Clicked" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    
+    [alertBox show];
 }
 
 @end
