@@ -27,6 +27,8 @@
 #define kBufferCount 1
 #define N 10
 
+#define chain 5
+
 @interface RIOInterface : NSObject {
 	UIViewController *selectedViewController;
 	__unsafe_unretained AudioAlertViewController *listener;
@@ -55,7 +57,6 @@
 
 @property(assign) float sampleRate;
 @property(assign) float frequency;
-
 
 //Audio Session/Graph Setup
 - (void)initializeAudioSession;

@@ -39,6 +39,8 @@
 	NSMutableString *key;
 	float currentFrequency;
 	NSString *prevChar;
+    
+    UIView *redAlertView;
 }
 
 @property(nonatomic, retain) IBOutlet UIButton *playButton;

@@ -43,6 +43,16 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     rioRef = [RIOInterface sharedInstance];
+    
+    redAlertView = [UIView new];
+    redAlertView.frame = CGRectMake(0, 0, 320, 480);
+    redAlertView.backgroundColor = [UIColor redColor];
+    redAlertView.hidden = YES;
+    
+    [self.view addSubview:redAlertView];
+    
+    [self toggleListening:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -107,9 +117,18 @@
     
     AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);
     
-    alertBox = [[UIAlertView alloc] initWithTitle:@"AlertBox" message:@"Alert Clicked" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    //[self stopListener];
+//    isListening = NO;
+//    [listenButton setTitle:@"Stop Listening" forState:UIControlStateNormal];
+//    
+//    alertBox = [[UIAlertView alloc] initWithTitle:@"AlertBox" message:@"Alert Clicked" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//    
+//    [alertBox show];
     
-    [alertBox show];
+    perror(<#const char *#>)
+    redAlertView.hidden = NO;
+    
+    
 }
 
 
@@ -146,5 +165,6 @@
 //	[pool drain];
 //	pool = nil;
 }
+
 
 @end

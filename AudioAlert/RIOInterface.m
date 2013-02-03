@@ -17,6 +17,12 @@
 @synthesize sampleRate;
 @synthesize frequency;
 
+int *binAverage = NULL;
+int nextIndex;
+float average;
+int inRow;
+
+
 float MagnitudeSquared(float x, float y);
 void ConvertInt16ToFloat(RIOInterface* THIS, void *buf, float *outputBuf, size_t capacity);
 
@@ -173,11 +179,18 @@ void ConvertInt16ToFloat(RIOInterface* THIS, void *buf, float *outputBuf, size_t
 
 //Listener Controls
 - (void)startListening:(AudioAlertViewController*)aListener {
+    
     self.listener = aListener;
 	[self createAUProcessingGraph];
 	[self initializeAndStartProcessingGraph];
 }
 - (void)stopListening {
+    
+//    for (int i = 0; i < 5; i++) {
+//        binAverage[i] = 0;
+//    }
+//    nextIndex = 0;
+    
     [self stopProcessingGraph];
 }
 
@@ -215,6 +228,15 @@ OSStatus RenderFFTCallback (void					*inRefCon,
                             UInt32 						inNumberFrames,
                             AudioBufferList				*ioData)
 {
+//    if (binAverage == NULL) {
+//        binAverage = malloc(sizeof(int) * 5);
+//        for (int i = 0; i < 5; i++) {
+//            binAverage[i] = 0;
+//        }
+//        nextIndex = 0;
+//        average = 0.0;
+//    }
+    
 	RIOInterface* THIS = (__bridge RIOInterface *)inRefCon;
 	COMPLEX_SPLIT A = THIS->A;
 	void *dataBuffer = THIS->dataBuffer;
@@ -279,6 +301,11 @@ OSStatus RenderFFTCallback (void					*inRefCon,
 			if (curFreq > dominantFrequency) {
 				dominantFrequency = curFreq;
 				bin = (i+1)/2;
+                
+//                binAverage[nextIndex] = bin;
+//                nextIndex = (nextIndex + 1) % 5;
+                
+                
 			}
 		}
 		memset(outputBuffer, 0, n*sizeof(SInt16));
@@ -286,6 +313,32 @@ OSStatus RenderFFTCallback (void					*inRefCon,
 		// Update the UI with our newly acquired frequency value.
 		[THIS->listener frequencyChangedWithValue:bin*(THIS->sampleRate/bufferCapacity)];
 		printf("Dominant frequency: %f   bin: %d \n", bin*(THIS->sampleRate/bufferCapacity), bin);
+        
+        if (bin > 60) {
+            inRow++;
+        } else {
+            inRow = 0;
+        }
+        
+        //Take Average
+        
+//        int sum = 0;
+//
+//        for (int i = 0; i < 5; i++) {
+//            sum = binAverage[i] + sum;
+//        }
+        
+//        average = sum/5;
+        
+        if (inRow == 15) {
+            
+            NSLog(@"ALERTALERT");
+            
+            inRow = 0;
+            
+            [THIS->listener performSelectorOnMainThread:@selector(alert) withObject:nil waitUntilDone:YES];
+        }
+        
 	}
 	
 	
