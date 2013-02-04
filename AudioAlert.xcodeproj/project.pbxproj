@@ -24,6 +24,7 @@
 		09F30A5C16BE806600647C10 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F30A5B16BE806600647C10 /* CoreFoundation.framework */; };
 		09F30A5E16BE807200647C10 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F30A5D16BE807200647C10 /* CoreAudio.framework */; };
 		09F30A6116BE87A700647C10 /* RIOInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F30A6016BE87A700647C10 /* RIOInterface.m */; };
+		9997157D16BF3CA1009CB0FE /* AudioAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 9997157C16BF3CA1009CB0FE /* AudioAlert.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		09F30A5D16BE807200647C10 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		09F30A5F16BE87A700647C10 /* RIOInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RIOInterface.h; path = AudioAlert/RIOInterface.h; sourceTree = "<group>"; };
 		09F30A6016BE87A700647C10 /* RIOInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RIOInterface.m; path = AudioAlert/RIOInterface.m; sourceTree = "<group>"; };
+		9997157C16BF3CA1009CB0FE /* AudioAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AudioAlert.png; path = AudioAlert/AudioAlert.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		093F4EBC16BDA15E001D6771 = {
 			isa = PBXGroup;
 			children = (
+				9997157C16BF3CA1009CB0FE /* AudioAlert.png */,
 				09F30A5F16BE87A700647C10 /* RIOInterface.h */,
 				09F30A6016BE87A700647C10 /* RIOInterface.m */,
 				093F4ECE16BDA15E001D6771 /* AudioAlert */,
@@ -189,6 +192,7 @@
 				093F4EDD16BDA15E001D6771 /* Default@2x.png in Resources */,
 				093F4EDF16BDA15E001D6771 /* Default-568h@2x.png in Resources */,
 				093F4EE216BDA15E001D6771 /* MainStoryboard.storyboard in Resources */,
+				9997157D16BF3CA1009CB0FE /* AudioAlert.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
